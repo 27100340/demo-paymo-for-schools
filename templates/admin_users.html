@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+<div class="admin-panel">
+    <h2>User Management</h2>
+    <div class="users-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Name</th>
+                    <th>School</th>
+                    <th>Student ID</th>
+                    <th>Balance</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for username, user in users.items() %}
+                <tr>
+                    <td>{{ username }}</td>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.school }}</td>
+                    <td>{{ user.student_id }}</td>
+                    <td>${{ user.balance }}</td>
+                    <td>
+                        <button onclick="editUser('{{ username }}')" class="edit-btn">Edit</button>
+                        <button onclick="deleteUser('{{ username }}')" class="delete-btn">Delete</button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="{{ url_for('static', filename='admin.js') }}"></script>
+{% endblock %}

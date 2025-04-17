@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up - Student Payment System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-box">
+            <h2>Create Account</h2>
+            <p class="subtitle">Join our student payment system</p>
+            
+            <form id="signupForm">
+                <div class="input-group">
+                    <input type="text" id="username" placeholder="Username" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="name" placeholder="Full Name" required>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="school" placeholder="School Name" required>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="student_id" placeholder="Student ID" required>
+                </div>
+                <button type="submit" class="primary-btn">Sign Up</button>
+            </form>
+            
+            <p class="auth-link">Already have an account? <a href="/login">Login</a></p>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='signup.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Login{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+    <div class="auth-box">
+        <h2>Admin Login</h2>
+        <form id="adminLoginForm">
+            <div class="input-group">
+                <input type="text" id="username" placeholder="Username" required>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="primary-btn">Login</button>
+        </form>
+        <div class="auth-links">
+            <p><a href="/">Back to Student Login</a></p>
+        </div>
+    </div>
+</div>
+<script>
+document.getElementById('adminLoginForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    try {
+        const response = await fetch('/admin-login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                username: document.getElementById('username').value,
+                password: document.getElementById('password').value
+            })
+        });
+        
+        const data = await response.json();
+        if (data.status === 'success') {
+            window.location.href = '/admin-dashboard';
+        } else {
+            alert('Login failed: ' + data.message);
+        }
+    } catch (error) {
+        alert('An error occurred during login');
+    }
+});
+</script>
+{% endblock %}

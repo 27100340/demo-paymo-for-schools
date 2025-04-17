@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Welcome <span id="studentName"></span></h2>
+    <p>Balance: $<span id="balance"></span></p>
+    
+    <div class="actions">
+        <button onclick="window.location.href='/topup-page'" class="action-btn">Top Up Balance</button>
+    </div>
+
+    <div class="transaction-history">
+        <h3>Transaction History</h3>
+        <table id="transactionTable">
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Amount</th>
+                    <th>Details</th>
+                    <th>Date & Time</th>
+                </tr>
+            </thead>
+            <tbody id="transactionBody">
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='dashboard.js') }}"></script>
+{% endblock %}

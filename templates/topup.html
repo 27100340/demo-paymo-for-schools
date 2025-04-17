@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Top Up Balance</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Top Up Your Balance</h2>
+        <div class="topup-form">
+            <form id="topupForm">
+                <select id="topupMethod" required>
+                    <option value="">Select Payment Method</option>
+                    {% for method in methods %}
+                    <option value="{{ method }}">{{ method }}</option>
+                    {% endfor %}
+                </select>
+                <input type="number" id="amount" placeholder="Amount" required min="1">
+                <button type="submit">Proceed to Payment</button>
+            </form>
+        </div>
+        <div id="paymentDetails" style="display: none;">
+            <h3>Payment Details</h3>
+            <div id="paymentContent"></div>
+            <button id="confirmPayment" class="confirm-btn">Confirm Payment</button>
+        </div>
+        <div id="message"></div>
+    </div>
+
+    <script>
+        document.getElementById('topupForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const method = document.getElementById('topupMethod').value;
+            const amount = document.getElementById('amount').value;
+            const paymentDetails = document.getElementById('paymentDetails');
+            const paymentContent = document.getElementById('paymentContent');
+            
+            // Show different payment details based on method
+            let details = '';
+            switch(method) {
+                case 'Payfast':
+                    details = `
+                        <p>Payfast Reference: PF${Math.random().toString(36).substr(2, 9)}</p>
+                        <p>Amount: $${amount}</p>
+                        <p>Click confirm to simulate payment</p>
+                    `;
+                    break;
+                case 'Credit/Debit Card':
+                    details = `
+                        <p>Enter Card Details:</p>
+                        <input type="text" placeholder="Card Number" value="4111 1111 1111 1111" readonly>
+                        <input type="text" placeRoots Ivyholder="MM/YY" value="12/25" readonly>
+                        <input type="text" placeholder="CVV" value="123" readonly>
+                        <p>Amount: $${amount}</p>
+                        <p>Click confirm to simulate payment</p>
+                    `;
+                    break;
+                case 'Bank Transfer':
+                    details = `
+                        <p>Bank: Example Bank</p>
+                        <p>Account: 1234567890</p>
+                        <p>Reference: BT${Math.random().toString(36).substr(2, 9)}</p>
+                        <p>Amount: $${amount}</p>
+                        <p>Click confirm to simulate payment</p>
+                    `;
+                    break;
+            }
+            
+            paymentContent.innerHTML = details;
+            paymentDetails.style.display = 'block';
+        });
+
+        document.getElementById('confirmPayment').addEventListener('click', async () => {
+            const method = document.getElementById('topupMethod').value;
+            const amount = document.getElementById('amount').value;
+            
+            // Get student details from session storage
+            const student_id = sessionStorage.getItem('student_id');
+            const school_name = sessionStorage.getItem('school_name');
+            
+            const response = await fetch('/topup', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    student_id: student_id,
+                    school_name: school_name,
+                    amount: amount,
+                    method: method
+                })
+            });
+            
+            const data = await response.json();
+            if (data.status === 'success') {
+                document.getElementById('message').innerHTML = `
+                    <div class="success-message">
+                        Top-up successful! New balance: $${data.new_balance}
+                    </div>
+                `;
+                // Reset forms
+                document.getElementById('topupForm').reset();
+                document.getElementById('paymentDetails').style.display = 'none';
+            } else {
+                document.getElementById('message').innerHTML = `
+                    <div class="error-message">
+                        ${data.message}
+                    </div>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %} - School Payment System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="nav-logo">
+            <img src="{{ url_for('static', filename='lgs.png') }}" alt="LGS Logo" class="nav-logo">
+        </div>
+        <div class="nav-links">
+            {% if session.get('admin_logged_in') %}
+                <a href="/admin-dashboard">Dashboard</a>
+                <a href="/admin-logout" class="logout-btn">Logout</a>
+            {% elif session.get('username') %}
+                <a href="/dashboard">Dashboard</a>
+                <a href="/logout" class="logout-btn">Logout</a>
+            {% endif %}
+        </div>
+    </nav>
+    <div class="main-content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

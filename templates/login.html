@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+    <div class="auth-box">
+        <h2>Student Login</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <input type="text" id="username" placeholder="Username" required>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="primary-btn">Login</button>
+        </form>
+        <div class="auth-links">
+            <p>Don't have an account? <a href="/signup">Sign Up</a></p>
+            <p>Are you an admin? <a href="/admin-login">Admin Login</a></p>
+        </div>
+    </div>
+</div>
+<script src="{{ url_for('static', filename='login.js') }}"></script>
+{% endblock %}

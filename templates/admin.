@@ -1,0 +1,24 @@
+html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Admin Dashboard</h2>
+        <div class="topup-form">
+            <h3>Top Up Student Balance</h3>
+            <form id="topupForm">
+                <input type="text" id="student_id" placeholder="Student ID" required>
+                <input type="text" id="school_name" placeholder="School Name" required>
+                <input type="number" id="amount" placeholder="Amount" required>
+                <button type="submit">Top Up</button>
+            </form>
+        </div>
+        <div id="message"></div>
+    </div>
+    <script src="{{ url_for('static', filename='admin.js') }}"></script>
+</body>
+</html>
