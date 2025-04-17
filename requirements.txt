@@ -1,13 +1,1 @@
 Flask==3.0.2
-gunicorn
-requests==2.31.0
-pandas==2.2.3
-numpy==2.2.2
-SQLAlchemy==2.0.38
-psycopg2-binary==2.9.10
-shopify-api==0.7.1
-shopify-python-api==1.0.1
-scikit-learn==1.6.1
-matplotlib==3.10.0
-scipy==1.15.1
-PyJWT==2.10.1
