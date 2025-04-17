@@ -1,0 +1,101 @@
+acres==0.3.0
+anaconda-anon-usage @ file:///croot/anaconda-anon-usage_1732732445543/work
+appier==1.34.6
+archspec @ file:///croot/archspec_1709217642129/work
+astroid==3.3.8
+boltons @ file:///work/perseverance-python-buildout/croot/boltons_1698851177130/work
+Brotli @ file:///croot/brotli-split_1714483155106/work
+cached-property==2.0.1
+certifi @ file:///croot/certifi_1734473278428/work/certifi
+cffi @ file:///croot/cffi_1726856441404/work
+charset-normalizer @ file:///croot/charset-normalizer_1721748349566/work
+ci-info==0.3.0
+click==8.1.8
+colorama==0.4.6
+conda @ file:///croot/conda_1733841818148/work
+conda-anaconda-telemetry @ file:///croot/conda-anaconda-telemetry_1733258728466/work
+conda-content-trust @ file:///croot/conda-content-trust_1714483159009/work
+conda-libmamba-solver @ file:///croot/conda-libmamba-solver_1727775630457/work/src
+conda-package-handling @ file:///croot/conda-package-handling_1731369017509/work
+conda_package_streaming @ file:///croot/conda-package-streaming_1731366181659/work
+configobj==5.0.9
+configparser==7.1.0
+contourpy==1.3.1
+cryptography @ file:///croot/cryptography_1732129644106/work
+cycler==0.12.1
+dill==0.3.9
+distro @ file:///croot/distro_1714488253808/work
+etelemetry==0.3.1
+filelock==3.17.0
+fitz==0.0.1.dev2
+fonttools==4.56.0
+frozendict @ file:///croot/frozendict_1713194832637/work
+greenlet==3.1.1
+httplib2==0.22.0
+idna @ file:///croot/idna_1714398848350/work
+inflection==0.5.1
+isodate==0.6.1
+isort==6.0.0
+joblib==1.4.2
+jsonpatch @ file:///croot/jsonpatch_1714483231291/work
+jsonpointer==2.1
+kiwisolver==1.4.8
+libmambapy @ file:///croot/mamba-split_1732896306512/work/libmambapy
+looseversion==1.3.0
+lxml==5.3.1
+mando==0.7.1
+matplotlib==3.10.0
+mccabe==0.7.0
+menuinst @ file:///croot/menuinst_1731364904452/work
+mypy-extensions==1.0.0
+networkx==3.4.2
+nibabel==5.3.2
+nipype==1.9.2
+numpy==2.2.2
+packaging @ file:///croot/packaging_1720101850331/work
+pandas==2.2.3
+pathlib==1.0.1
+pillow==11.1.0
+platformdirs @ file:///work/perseverance-python-buildout/croot/platformdirs_1701732573265/work
+pluggy @ file:///croot/pluggy_1733169602837/work
+prov==2.0.1
+psycopg2-binary==2.9.10
+puremagic==1.28
+pyactiveresource==2.2.2
+pycosat @ file:///croot/pycosat_1714510623388/work
+pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
+pydot==3.0.4
+PyJWT==2.10.1
+pylint==3.3.4
+PyMuPDF==1.25.3
+pyparsing==3.2.1
+PySocks @ file:///work/perseverance-python-buildout/croot/pysocks_1698845478203/work
+python-dateutil==2.9.0.post0
+pytz==2025.1
+pyxnat==1.6.3
+PyYAML==6.0.2
+radon==6.0.1
+rdflib==6.3.2
+requests @ file:///croot/requests_1730999120400/work
+ruamel.yaml @ file:///croot/ruamel.yaml_1727980156079/work
+ruamel.yaml.clib @ file:///croot/ruamel.yaml.clib_1727769819935/work
+scikit-learn==1.6.1
+scipy==1.15.1
+setuptools==75.1.0
+shopify-api==0.7.1
+shopify-python-api==1.0.1
+simplejson==3.20.1
+six==1.17.0
+SQLAlchemy==2.0.38
+sqlalchemy-orm==1.2.10
+threadpoolctl==3.5.0
+tomlkit==0.13.2
+tqdm @ file:///croot/tqdm_1724853939799/work
+traits==7.0.2
+truststore @ file:///work/perseverance-python-buildout/croot/truststore_1701735771625/work
+typing-inspect==0.9.0
+typing_extensions==4.12.2
+tzdata==2025.1
+urllib3 @ file:///croot/urllib3_1727769808118/work
+wheel==0.44.0
+zstandard @ file:///croot/zstandard_1731356346222/work
