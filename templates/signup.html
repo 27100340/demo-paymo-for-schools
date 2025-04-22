@@ -1,37 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Sign Up - Student Payment System</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Paymo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
-<body>
-    <div class="auth-container">
-        <div class="auth-box">
-            <h2>Create Account</h2>
-            <p class="subtitle">Join our student payment system</p>
-            
-            <form id="signupForm">
-                <div class="input-group">
-                    <input type="text" id="username" placeholder="Username" required>
+<body style="margin: 0; font-family: 'Poppins', sans-serif; display: flex; height: 100vh; overflow: hidden;">
+    <!-- Left Section: Signup Form -->
+    <div style="flex: 1; background-color: #ffffff; display: flex; justify-content: center; align-items: center; padding: 20px;">
+        <div style="width: 100%; max-width: 400px; text-align: left;">
+            <div style="margin-bottom: 20px;">
+                <img src="/static/logo.png" alt="Paymo" style="height: 30px;">
+            </div>
+            <h2 style="font-size: 24px; font-weight: 600; margin-bottom: 10px;">Create Account</h2>
+            <p style="color: #666; margin-bottom: 30px; font-size: 14px;">Join Paymo for seamless school payments</p>
+            <form id="signupForm" onsubmit="handleSignup(event)">
+                <div style="margin-bottom: 20px;">
+                    <label for="name" style="display: block; font-size: 14px; color: #333; margin-bottom: 5px;">Full Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter Full Name" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px; outline: none;" required>
                 </div>
-                <div class="input-group">
-                    <input type="password" id="password" placeholder="Password" required>
+                <div style="margin-bottom: 20px;">
+                    <label for="username" style="display: block; font-size: 14px; color: #333; margin-bottom: 5px;">Username</label>
+                    <input type="text" class="form-control" id="username" placeholder="Enter Username" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px; outline: none;" required>
                 </div>
-                <div class="input-group">
-                    <input type="text" id="name" placeholder="Full Name" required>
+                <div style="margin-bottom: 20px;">
+                    <label for="school" style="display: block; font-size: 14px; color: #333; margin-bottom: 5px;">School</label>
+                    <input type="text" class="form-control" id="school" placeholder="Enter School" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px; outline: none;" required>
                 </div>
-                <div class="input-group">
-                    <input type="text" id="school" placeholder="School Name" required>
+                <div style="margin-bottom: 20px;">
+                    <label for="student_id" style="display: block; font-size: 14px; color: #333; margin-bottom: 5px;">Student ID</label>
+                    <input type="text" class="form-control" id="student_id" placeholder="Enter Student ID" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px; outline: none;" required>
                 </div>
-                <div class="input-group">
-                    <input type="text" id="student_id" placeholder="Student ID" required>
+                <div style="margin-bottom: 20px;">
+                    <label for="password" style="display: block; font-size: 14px; color: #333; margin-bottom: 5px;">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Enter Password" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px; outline: none;" required>
                 </div>
-                <button type="submit" class="primary-btn">Sign Up</button>
+                <button type="submit" class="btn-primary" style="width: 100%; padding: 12px; background-color: #6b21a8; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">Create Account</button>
             </form>
-            
-            <p class="auth-link">Already have an account? <a href="/login">Login</a></p>
+            <p style="text-align: center; margin-top: 20px; font-size: 14px; color: #666;">
+                Already have an account? <a href="/login" style="color: #6b21a8; text-decoration: none;">Sign in</a>
+            </p>
         </div>
     </div>
-    <script src="{{ url_for('static', filename='signup.js') }}"></script>
+    <!-- Right Section: Background Image -->
+    <div style="flex: 1; background: url('/static/background.png') no-repeat center center; background-size: cover; background-color: #d8bffd;">
+    </div>
+    <script src="/static/js/auth.js"></script>
 </body>
 </html>

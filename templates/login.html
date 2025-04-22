@@ -1,25 +1,43 @@
-{% extends "base.html" %}
-
-{% block title %}Login{% endblock %}
-
-{% block content %}
-<div class="auth-container">
-    <div class="auth-box">
-        <h2>Student Login</h2>
-        <form id="loginForm">
-            <div class="input-group">
-                <input type="text" id="username" placeholder="Username" required>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Paymo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body style="margin: 0; font-family: 'Poppins', sans-serif; display: flex; height: 100vh; overflow: hidden;">
+    <!-- Left Section: Login Form -->
+    <div style="flex: 1; background-color: #ffffff; display: flex; justify-content: center; align-items: center; padding: 20px;">
+        <div style="width: 100%; max-width: 400px; text-align: left;">
+            <div style="margin-bottom: 20px;">
+                <img src="/static/logo.png" alt="Paymo" style="height: 30px;">
             </div>
-            <div class="input-group">
-                <input type="password" id="password" placeholder="Password" required>
-            </div>
-            <button type="submit" class="primary-btn">Login</button>
-        </form>
-        <div class="auth-links">
-            <p>Don't have an account? <a href="/signup">Sign Up</a></p>
-            <!-- <p>Are you an admin? <a href="/admin-login">Admin Login</a></p> -->
+            <h2 style="font-size: 24px; font-weight: 600; margin-bottom: 10px;">Sign in</h2>
+            <p style="color: #666; margin-bottom: 30px; font-size: 14px;">Sign in to continue to your account</p>
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <div style="margin-bottom: 20px;">
+                    <label for="username" style="display: block; font-size: 14px; color: #333; margin-bottom: 5px;">Username</label>
+                    <input type="text" id="username" class="form-control" placeholder="Enter Username" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px; outline: none;" required>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label for="password" style="display: block; font-size: 14px; color: #333; margin-bottom: 5px;">Password</label>
+                    <input type="password" id="password" class="form-control" placeholder="Enter Password" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px; outline: none;" required>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <input type="checkbox" id="keep-logged-in" name="keep-logged-in" style="margin-right: 10px;">
+                    <label for="keep-logged-in" style="font-size: 14px; color: #333;">Keep me logged in</label>
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%; padding: 12px; background-color: #6b21a8; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">Sign In</button>
+            </form>
+            <p style="text-align: center; margin-top: 20px; font-size: 14px; color: #666;">
+                Don't have an account? <a href="/signup" style="color: #6b21a8; text-decoration: none;">Sign up</a>
+            </p>
         </div>
     </div>
-</div>
-<script src="{{ url_for('static', filename='login.js') }}"></script>
-{% endblock %}
+    <!-- Right Section: Background Image -->
+    <div style="flex: 1; background: url('/static/background.png') no-repeat center center; background-size: cover; background-color: #d8bffd;">
+    </div>
+    <script src="/static/js/auth.js"></script>
+</body>
+</html>

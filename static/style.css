@@ -394,7 +394,7 @@ select {
 }
 
 .nav-logo[alt="LGS Logo"] {
-    height: 60px; /* Increased size for LGS logo */
+    height: 90px; /* Increased size for LGS logo */
 }
 
 .nav-links {
@@ -469,4 +469,124 @@ select {
 .secondary-btn {
     background: #6c757d;
     color: white;
+}
+
+/* Add these styles after your existing CSS */
+
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    background: url('/static/background.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.auth-left {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.auth-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-logo {
+    width: 120px;
+    margin-bottom: 40px;
+}
+
+.auth-form {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.auth-form h2 {
+    font-size: 24px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.auth-form p {
+    color: #666;
+    margin-bottom: 24px;
+    font-size: 14px;
+}
+
+.auth-form .input-group {
+    margin-bottom: 20px;
+}
+
+.auth-form .input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.auth-form input:focus {
+    border-color: #6C63FF;
+    box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.1);
+}
+
+.auth-form .remember-me {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.auth-form .remember-me input[type="checkbox"] {
+    width: auto;
+}
+
+.auth-form button {
+    width: 100%;
+    padding: 12px;
+    background: #6C63FF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.auth-form button:hover {
+    background: #5A51FF;
+}
+
+.auth-form .auth-links {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.auth-form .auth-links a {
+    color: #6C63FF;
+    text-decoration: none;
+}
+
+.auth-form .auth-links a:hover {
+    text-decoration: underline;
 }

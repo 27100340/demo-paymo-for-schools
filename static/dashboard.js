@@ -1,17 +1,17 @@
 window.onload = async () => {
-    const username = sessionStorage.getItem('username');
-    if (!username) {
-        window.location.href = '/';
-        return;
-    }
+    // const username = sessionStorage.getItem('username');
+    // if (!username) {
+    //     window.location.href = '/';
+    //     return;
+    // }
 
     try {
         const response = await fetch('/get-user-data', {
-            method: 'POST',
+            method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ username: username })
+            // body: JSON.stringify({ username: username })
         });
         
         const data = await response.json();
